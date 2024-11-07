@@ -54,3 +54,12 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     darkToggle.checked = false;
   }
 
+function sendMail(){
+    let parms = {
+        from_name : document.getElementById("from_name").value,
+        Email : document.getElementById("Email").value,
+        message : document.getElementById("message").value,
+    }
+
+    emailjs.send("service_mniqeki","template_1dc6z4i",parms).then(alert("Email Sent!!!"))
+}
